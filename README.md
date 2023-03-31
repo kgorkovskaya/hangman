@@ -25,4 +25,11 @@ Created variables for the game:
 
 - Created Hangman class
 - Defined constructor method, check_guess method, and ask_for_input method.
-- Constructor takes word_list as an argument, randomly selects a word from the list, calculates the number of unique letters in the word, and initializes the word_guessed and list_of_guesses attributes as empty lists, to keep track of correctly-guessed letters and all guessed letters, respectively. The num_lives attribute keeps track of the number of remaining lives and is decremented each time the user makes an incorrect guess.
+- Constructor takes word_list and num_lives as arguments (num_lives defaults to 5). It randomly selects a word from the list, sets num_letters to the number of unique letters in the word, and sets the word_guessed and list_of_guesses attributes to empty lists, to keep track of correctly-guessed letters and all guessed letters, respectively. The num_lives attribute keeps track of the number of remaining lives and is decremented each time the user makes an incorrect guess.
+- The ask_for_input method uses a while loop to validate user input (valid input = single alpha character). If input is valid, it calls the check_guess method, which checks if the user's guess is in the target word by iterating over the letters in the target word. If the guess exists in the target word, the guessed letter is added to the word_guessed list, num_letters is decremented, and a message is printed to the console. If the user's guess is *not* in the target word, num_lives is decremented and a message is printed to the console. Control is then returned from the check_guess method to the ask_for_input method, which appends the user's guess to the list_of_guesses.
+
+## Milestone 5
+
+- Created play_game function to execute the game logic.
+- This takes a list of words as an argument, and creates an instance of the Hangman class with that word list and 5 lives.
+- It then executes a while loop until the game is won or lost. If the number of lives in the game is zero, the game has been lost, the loop is broken out of, and a message is printed to the console. If the number of unique, non-guessed letters in the target word is equal to zero, the game has been won, the loop is broken out of, and a message is printed to the console. If the number of lives is greater than zero and the number of unique, non-guessed letters in the target word is greater to zero, it executes the game's ask_for_input method. 
