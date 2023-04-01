@@ -39,6 +39,6 @@ class Hangman:
 
 if __name__ == '__main__':
 
-    word_list = ['papaya', 'pineapple', 'pomegranate']
+    word_list = ["papaya", "pineapple", "pomegranate", "pear", "starfruit"]
     game = Hangman(word_list)
     game.ask_for_input()
